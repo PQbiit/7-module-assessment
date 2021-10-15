@@ -8,6 +8,9 @@ function sumZero(arr){
    
 }
 
+console.log('--------------Sum Zero--------------');
+
+
 /* 
 2) Unique Characters
 Write a function that takes in a single word, as a string. 
@@ -15,8 +18,20 @@ It should return True if that word contains only unique characters. Return False
 */
 
 function unique(word){
-
+    let cache = {};
+    for (let i = 0; i < word.length; i++) {
+        if(cache[word[i]]){
+            return false
+        }else{
+            cache[word[i]] = word[i];
+        }
+    }
+    return true
 }
+
+console.log('--------------Unique Characters--------------');
+console.log(unique('Monday'));
+console.log(unique('Moonday'));
 
 /* 
 3) Pangram Sentence
@@ -29,6 +44,8 @@ Write a function to check a sentence to see if it is a pangram or not.
 function isPangram(sentence){
 
 }
+
+console.log('--------------Panagram Sentence--------------');
 
 /* 
 4) Longest Word
@@ -46,4 +63,5 @@ function findLongestWord(words){
     return max
 }
 
+console.log('--------------Longest Word--------------');
 console.log(findLongestWord(['hi','congratulations','hello']))
